@@ -18,6 +18,7 @@ html {
 body, h1, h2, h3, h4, p,
 figure, blockquote, dl, dd {
   margin-block-end: 0;
+  margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -116,4 +117,39 @@ textarea:not([rows]) {
     --fw-medium: 500;
     --fw-bold: 700;
     --fw-x-bold: 800;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    width: auto;
+}
+
+.summary-container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    max-width: 736px;
+    background-color: var(--clr-neutral-white);
+}
+
+.summary-container > :first-child {
+    background: linear-gradient(to bottom, var(--clr-gradient-slate-blue), var(--clr-gradient-royal-blue));
+    border-radius: 0 0 3rem 3rem;
+    flex: 0.7;
+}
+
+.summary-container > :last-child {
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    body {
+        place-items: center;
+    }
+
+    .summary-container {
+        display: flex;
+        flex-direction: row;
+    }
 }
