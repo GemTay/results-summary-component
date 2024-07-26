@@ -20,44 +20,50 @@
 
   <main>
     <div class="summary-container">
-      <div>
-        <h1>Your Result</h1>
-        <h2>76 of 100</h2>
-        <p>Great</p>
-        <p>You scored higher than 65% of the people who have taken these tests.</p>
+      <div class="summary-result">
+        <h1 class="fs-400 fw-bold clr-neutral-lavender">Your Result</h1>
+        <div class="result-score">
+          <h2 class="fs-600 clr-neutral-white summary-result--score">76<span class=" fs-300">of 100</span></h2>
+        </div>
+        <div>
+          <p class="fs-500 clr-neutral-white">Great</p>
+          <p class="fs-300 clr-neutral-lavender">You scored higher than 65% of the people who have taken these tests.</p>
+        </div>
+
       </div>
-      <div>
-        <h3>Summary</h3>
-        <ul>
+      <div class="summary-breakdown">
+        <h3 class="fs-400">Summary</h3>
+        <ul class="fs-300">
           <li>
-            <img src="./assets/images/icon-reaction.svg">
+            <img src="./assets/images/icon-reaction.svg" class="summary-breakdown--icon">
             <p>Reaction</p>
-            <p>80 / 100</p>
+            <p class="summary-breakdown--score">80 <span>/ 100</span></p>
           </li>
           <li>
-            <img src="./assets/images/icon-memory.svg">
+            <img src="./assets/images/icon-memory.svg" class="summary-breakdown--icon">
             <p>Memory</p>
-            <p>92 / 100</p>
+            <p class="summary-breakdown--score">92 <span>/ 100</span></p>
           </li>
           <li>
-            <img src="./assets/images/icon-verbal.svg">
+            <img src="./assets/images/icon-verbal.svg" class="summary-breakdown--icon">
             <p>Verbal</p>
-            <p>61 / 100</p>
+            <p class="summary-breakdown--score">61 <span>/ 100</span></p>
           </li>
           <li>
-            <img src="./assets/images/icon-visual.svg">
+            <img src="./assets/images/icon-visual.svg" class="summary-breakdown--icon">
             <p>Visual</p>
-            <p>72 / 100</p>
+            <p class="summary-breakdown--score">72 <span>/ 100</span></p>
           </li>
         </ul>
-        <button>Continue</button>
+        <button class="fs-400">Continue</button>
       </div>
     </div>
   </main>
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Gemma Taylor</a>.
-  </div>
+  <footer>
+    <div class="attribution fs-300 clr-neutral-lavender">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/GemTay">Gemma Taylor</a>.
+    </div>
+  </footer>
 </body>
 </html>
