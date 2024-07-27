@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [pending](pending)
-- Live Site URL: [https://gemtay.github.io/results-summary-component/index.html](https://gemtay.github.io/results-summary-component/index.html)
+- Solution URL: [Frontend mentor solution](https://www.frontendmentor.io/solutions/responsive-results-summary-using-grid-and-flexbox-2iR3PzeiF2)
+- Live Site URL: [Live solution](https://gemtay.github.io/results-summary-component/)
 
 ## My process
 
