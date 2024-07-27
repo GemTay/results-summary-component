@@ -4,63 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <!-- Google font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
   <!-- CSS sheet -->
   <link rel="stylesheet" href="./index.css">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
-  <title>Frontend Mentor | Results summary component</title>
+  <title>Results summary component</title>
 </head>
 <body>
 
   <main>
     <div class="summary-container">
-      <div class="summary-result">
-        <h1 class="fs-400 fw-bold clr-neutral-lavender">Your Result</h1>
-        <div class="result-score">
-          <h2 class="fs-600 clr-neutral-white summary-result--score">76<span class=" fs-300">of 100</span></h2>
-        </div>
-        <div>
-          <p class="fs-500 clr-neutral-white">Great</p>
-          <p class="fs-300 clr-neutral-lavender">You scored higher than 65% of the people who have taken these tests.</p>
+      <div class="result grid-flow" data-spacing="large">
+        <h1 class="section-title">Your Result</h1>
+        
+        <p class="result-score">76<span>of 100</span></p>
+
+        <div class="grid-flow">
+          <p class="result-rank">Great</p>
+          <p class="result-info">You scored higher than 65% of the people who have taken these tests.</p>
         </div>
 
       </div>
-      <div class="summary-breakdown">
-        <h3 class="fs-400">Summary</h3>
-        <ul class="fs-300">
-          <li>
-            <img src="./assets/images/icon-reaction.svg" class="summary-breakdown--icon">
-            <p>Reaction</p>
-            <p class="summary-breakdown--score">80 <span>/ 100</span></p>
-          </li>
-          <li>
-            <img src="./assets/images/icon-memory.svg" class="summary-breakdown--icon">
-            <p>Memory</p>
-            <p class="summary-breakdown--score">92 <span>/ 100</span></p>
-          </li>
-          <li>
-            <img src="./assets/images/icon-verbal.svg" class="summary-breakdown--icon">
-            <p>Verbal</p>
-            <p class="summary-breakdown--score">61 <span>/ 100</span></p>
-          </li>
-          <li>
-            <img src="./assets/images/icon-visual.svg" class="summary-breakdown--icon">
-            <p>Visual</p>
-            <p class="summary-breakdown--score">72 <span>/ 100</span></p>
-          </li>
-        </ul>
-        <button class="fs-400">Continue</button>
+      <div class="summary grid-flow" data-spacing="large">
+        <h2 class="section-title">Summary</h2>
+
+        <div class="grid-flow">
+          <div class="summary-item">
+            <div class="flex-group">
+              <img src="./assets/images/icon-reaction.svg">
+              <h3 class="summary-item--title">Reaction</h3>
+            </div>
+            <p class="summary-item--score">80 <span>/ 100</span></p>
+          </div>
+  
+          <div class="summary-item">
+            <div class="flex-group">
+              <img src="./assets/images/icon-memory.svg">
+              <h3 class="summary-item--title">Memory</h3>
+            </div>
+            <p class="summary-item--score">92 <span>/ 100</span></p>
+          </div>
+  
+          <div class="summary-item">
+            <div class="flex-group">
+              <img src="./assets/images/icon-verbal.svg">
+              <h3 class="summary-item--title">Verbal</h3>
+            </div>
+            <p class="summary-item--score">61 <span>/ 100</span></p>
+          </div>
+  
+          <div class="summary-item">
+            <div class="flex-group">
+              <img src="./assets/images/icon-visual.svg">
+              <h3 class="summary-item--title">Visual</h3>
+            </div>
+            <p class="summary-item--score">72 <span>/ 100</span></p>
+          </div>
+        </div>
+
+        <button>Continue</button>
       </div>
     </div>
   </main>
   <footer>
-    <div class="attribution fs-300 clr-neutral-lavender">
+    <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a href="https://github.com/GemTay">Gemma Taylor</a>.
     </div>
