@@ -1,97 +1,125 @@
-# Frontend Mentor - Results summary component
+# Frontend Mentor - Results summary component solution
 
-![Design preview for the Results summary component coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Results summary component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+## Overview
 
-## The challenge
+### The challenge
 
-Your challenge is to build out this results summary component and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-We provide the data for the results in a local `data.json` file. So you can use that to add the results and total score dynamically if you choose.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 - **Bonus**: Use the local JSON data to dynamically populate the content
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![desktop view](./solution-screenshots/desktop-screenshot.png)
+![mobile view](./solution-screenshots/mobile-screenshot.png)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### Links
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+- Solution URL: [pending](pending)
+- Live Site URL: [https://gemtay.github.io/results-summary-component/index.html](https://gemtay.github.io/results-summary-component/index.html)
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+## My process
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+### Built with
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+### What I learned
 
-## Building your project
+How to use the `calc()` function to increase the horizontal padding on the result section. This way I was able to define a variable `--padding` on the parent `summary-container` and make padding consistent across both sections, and use the calc function to increase just the inline padding slightly for the result section:
+```css
+.result {
+  ...
+  padding: var(--padding) calc(var(--padding) * 1.5);
+  ...
+}
+```
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+Some HTML im proud of 🥰: creating a data attribute `data-spacing` to increase the data flow gap between some elements
+```html
+<div class="result grid-flow" data-spacing="large">
+```
+Some CSS im proud of: Defining the `--clr-category` on each `summary-item:nth-child(x)` and then setting the category background and text using that variable
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+```css
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.75rem;
+    background-color: hsla(var(--category-clr), 0.05);
+    padding: 1rem;
+}
 
-## Deploying your project
+.summary-item--title {
+    font-size: var(--fs-300);
+    font-weight: var(--fw-medium);
+    color: hsla(var(--category-clr), 1);
+}
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+.summary-item:nth-child(1) {
+    --category-clr: var(--clr-primary-red);
+}
+```
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+### Continued development
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+To go a step further, I would like to be able to also change the colour of the icons, for example, what if we want the "Visual" summary category to now have a purple icon, title and background instead of blue?
 
-## Create a custom `README.md`
+Solution:
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+I would embed the icon SVG's directly in the HTML, removed their colour eg `stroke="#FFB21E"`. Then set the stroke colour of the svg using the `--clr-category` in my CSS like so:
+```css
+.summary-item svg {
+    stroke: hsl(var(--category-clr));
+}
+```
+Now, if I define a new colour and set it as the Visual category colour:...
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+```css
+:root {
+  ...
+  --clr-primary-purple: 276, 100%, 50%;
+}
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+.summary-item:nth-child(4) {
+    --category-clr: var(--clr-primary-purple);
+}
+```
 
-## Submitting your solution
+...& tadaa!🎉
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+<img src="./solution-screenshots/continued-development-solution.png" width="400">
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+### Useful resources
 
-## Sharing your solution
+- [MDN CSS docs](https://developer.mozilla.org/en-US/docs/Learn/CSS) - Always a useful source for checking CSS documentation. For this project I used it for checking how to create linear gradients, using the alpha value to create opacity with `hsla()`, grid columns and more...
 
-There are multiple places you can share your solution:
+## Author
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+- Website - [Gemma Taylor - Personal website pending 👀](#)
+- Frontend Mentor - [@GemTay](https://www.frontendmentor.io/profile/GemTay)
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
